@@ -2,7 +2,7 @@
 Jason Molisani's (jm979) project 1
 
 ## How to get the code running
-<sub><sup>Instructions borrowed and adapted from https://github.com/Sresht/lect6-heroku/blob/master/README</sub></sup>  
+<sup>Instructions borrowed and adapted from https://github.com/Sresht/lect6-heroku/blob/master/README</sup>  
 1. Sign up for the twitter developer portal at https://developer.twitter.com
 2. Navigate to https://developer.twitter.com/en/portal/projects-and-apps and make a new app.
 3. Click on the key symbol after creating your project, and it will take you to your keys and tokens.
