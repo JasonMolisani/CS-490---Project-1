@@ -14,7 +14,7 @@ Jason Molisani's (jm979) project 1
    - pip3 install tweepy
 6. Install flask using the same command used in step four, replacing "tweepy" with "flask"
 7. Install python-dotenv using the same commands used in step four, replacing "tweepy" with "python-dotenv"
-8. Add your secret keys (from step 2) by making a new file called tweepy.env in the main folder of the repository and populating it as follows. ** MAKE SURE THE FILE AND VARIABLES ARE NAMED THE EXACT SAME WAY AS DESCRIBED!!!**
+8. Add your secret keys (from step 2) by making a new file called tweepy.env in the main folder of the repository and populating it as follows. **MAKE SURE THE FILE AND VARIABLES ARE NAMED THE EXACT SAME WAY AS DESCRIBED!!!**
    - TWITTER_API_KEY='insert_key_here'
    - TWITTER_API_SECRET_KEY='insert_secret_key_here'
 8. Run `python main.py`
