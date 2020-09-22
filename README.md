@@ -2,10 +2,23 @@
 Jason Molisani's (jm979) project 1
 
 ## How to get the code running
-1. Open a terminal, command window, or some other form of bash shell and navigate to the main folder of the repository.
-2. Load a valid twitter api key and corresponding sercret key into the TWITTER_API_KEY and TWITTER_API_SECRET_KEY environmental variables.
-   - I have been doing this manually by copying and pasting from a local file since it feels more secure to not save the keys in some cloud that I don't have control over.
-3. Run the code from the terminal by entering 'python main.py'
+<sub><sup>Instructions borrowed and adapted from https://github.com/Sresht/lect6-heroku/blob/master/README</sub></sup>  
+1. Sign up for the twitter developer portal at https://developer.twitter.com
+2. Navigate to https://developer.twitter.com/en/portal/projects-and-apps and make a new app.
+3. Click on the key symbol after creating your project, and it will take you to your keys and tokens.
+4. Clone this repository by using git clone http://www.github.com/Sresht/lect6-heroku
+5. Install tweepy using one of the following console commands:
+   - sudo pip install tweepy
+   - sudo pip3 install tweepy
+   - pip install tweepy
+   - pip3 install tweepy
+6. Install flask using the same command used in step four, replacing "tweepy" with "flask"
+7. Install python-dotenv using the same commands used in step four, replacing "tweepy" with "python-dotenv"
+8. Add your secret keys (from step 2) by making a new file called tweepy.env in the main folder of the repository and populating it as follows. ** MAKE SURE THE FILE AND VARIABLES ARE NAMED THE EXACT SAME WAY AS DESCRIBED!!!**
+   - TWITTER_API_KEY='insert_key_here'
+   - TWITTER_API_SECRET_KEY='insert_secret_key_here'
+8. Run `python main.py`
+10. If on Cloud9, preview templates/index.html. This should successfully render the HTML!
 
 ## Technical Problems encountered
 1. So far I have yet to run into any real problems. The biggest issue was my unfamiliarity with tweepy, but a couple internet searches allowed my to find the syntax needed. My code ran on the first try.
@@ -13,8 +26,8 @@ Jason Molisani's (jm979) project 1
 
 ## Known Issues and Possible improvements
 - The search of tweets can sometimes return tweets that are not in english. This happens most often when the tweet tags another user and their username/handle contains part of the keyword.
-  - Currently unresolved
+  - **Currently unresolved**
 - The web page looks very ugly. The css file has been linked, but the file itself remains empty
-  - Currently unresolved
+  - **Partially resolved** - Some css has been entered, but there is still room for improvement
 - Spoontacular not implemented
-  - Currently unresolved - part of Milestone two
+  - **Currently unresolved** - part of Milestone two
