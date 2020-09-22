@@ -2,6 +2,8 @@ from tweepy import OAuthHandler
 from tweepy import API
 from tweepy import Cursor
 from datetime import datetime
+from dotenv import load_dotenv
+from os.path import join, dirname
 import os
 import flask
 import random
@@ -11,6 +13,8 @@ import random
 # Set up the teitter API        #
 #                               #
 #################################
+dotenv_path = join(dirname(__file__), 'tweepy.env')
+load_dotenv(dotenv_path)
 consumer_key = os.environ["TWITTER_API_KEY"]
 consumer_secret = os.environ["TWITTER_API_SECRET_KEY"]
 #access_token=""
@@ -46,10 +50,13 @@ def index():
     recipe_url = "https://www.google.com/"
     name_recipe = "Search Google for more " + keyword + " ideas"
     
-    # TODO get a tweet relevant to the keyword and overwrite the default values of the flask variables
+    # get a tweet relevant to the keyword and overwrite the default values of the flask variables
     max_tweets = 1
     for relevant_tweet in Cursor(auth_api.search, q=keyword, count=1).items(max_tweets):
-        tweet_content = relevant_tweet.text
+        try:
+            tweet_content = relevant_tweet.retweeted_status.full_text
+        except AttributeError:  # Not a Retweet
+            tweet_content = relevant_tweet.text
         tweet_sender = relevant_tweet.user.name + " (@" + relevant_tweet.user.screen_name + ")"
         tweet_date = relevant_tweet.created_at.strftime("%m/%d/%Y, %H:%M:%S")
     

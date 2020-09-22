@@ -1,0 +1,50 @@
+body {
+    font-family: Helvetica;
+    background-color: #8888FF;
+}
+
+h1 {
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 62%;
+    border: 3px solid #996600;
+    background-color: #0000EE;
+    display: block;
+    text-align: center;
+}
+
+#main {
+    margin: auto;
+    padding: 10px;
+    width: 62%;
+    background-color: #0000EE;
+    border: 3px solid #996600;
+    color: #000000;
+    font-size: 18pt;
+    text-align: center;
+    display: block;
+}
+
+#text {
+    width: 33%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#image {
+    width: 66%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+img {
+    width: 100%;
+}
+
+
+p {
+    margin: 0 0 0 0;
+}

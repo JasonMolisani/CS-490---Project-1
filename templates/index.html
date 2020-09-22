@@ -4,13 +4,15 @@
     </head>
     <body>
         <h1>Recipe related to {{recipe_seed}}:</h1>
-        <div>
-            <p>{{tweet[0]}}</p>
-            <p>{{tweet[1]}}, {{tweet[2]}}</p>
-        </div>
-        <div>
-            <img src={{recipe_image}} />
-            <p><a href={{recipe_link}}>{{recipe_name}}</a></p>
+        <div id="main">
+            <div id="text">
+                <p>{{tweet[0]}}</p>
+                <p style="text-align:right; font-size: 14pt">- {{tweet[1]}}, {{tweet[2]}}</p>
+            </div>
+            <div id="image">
+                <img src={{recipe_image}} />
+                <p><a href={{recipe_link}}>{{recipe_name}}</a></p>
+            </div>
         </div>
     </body>
 </html>
