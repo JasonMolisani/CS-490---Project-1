@@ -1,5 +1,7 @@
 from tweepy import OAuthHandler
 from tweepy import API
+from tweepy import Cursor
+from datetime import datetime
 import os
 import flask
 import random
@@ -45,6 +47,11 @@ def index():
     name_recipe = "Search Google for more " + keyword + " ideas"
     
     # TODO get a tweet relevant to the keyword and overwrite the default values of the flask variables
+    max_tweets = 1
+    for relevant_tweet in Cursor(auth_api.search, q=keyword, count=1).items(max_tweets):
+        tweet_content = relevant_tweet.text
+        tweet_sender = relevant_tweet.user.name + " (@" + relevant_tweet.user.screen_name + ")"
+        tweet_date = relevant_tweet.created_at.strftime("%m/%d/%Y, %H:%M:%S")
     
     # TODO get a corresponding recipe and image from Spoontacular and overwrite the default values of the flask variables
     
