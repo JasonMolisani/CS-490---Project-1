@@ -7,22 +7,28 @@ from os.path import join, dirname
 import os
 import flask
 import random
+import spoonacular as sp
 
 #################################
 #                               #
-# Set up the teitter API        #
+# Set up the twitter API        #
+# Set up the spoonacular API    #
 #                               #
 #################################
 dotenv_path = join(dirname(__file__), 'tweepy.env')
 load_dotenv(dotenv_path)
 consumer_key = os.environ["TWITTER_API_KEY"]
 consumer_secret = os.environ["TWITTER_API_SECRET_KEY"]
+spoon_key = os.environ["SPOONACULAR_API_KEY"]
 #access_token=""
 #access_token_secret=""
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 #auth.set_access_token(access_token, access_token_secret)
 auth_api = API(auth)
+
+sp_api = sp.API(spoon_key)
+
 
 #################################
 #                               #
@@ -60,7 +66,14 @@ def index():
         tweet_sender = relevant_tweet.user.name + " (@" + relevant_tweet.user.screen_name + ")"
         tweet_date = relevant_tweet.created_at.strftime("%m/%d/%Y, %H:%M:%S")
     
-    # TODO get a corresponding recipe and image from Spoontacular and overwrite the default values of the flask variables
+    # get a corresponding recipe and image from Spoontacular and overwrite the default values of the flask variables
+    sp_response = sp_api.search_recipes_complex(keyword, number=1)
+    sp_response = sp_response.json()["results"][0]
+    sp_data = sp_api.get_recipe_information(sp_response["id"])
+    sp_data = sp_data.json()
+    image_url = sp_data["image"]
+    recipe_url = sp_data["sourceUrl"]
+    name_recipe = sp_data["title"]
     
     # Plug the flask variables into the render template and return the page
     return flask.render_template(
