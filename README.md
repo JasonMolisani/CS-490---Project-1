@@ -1,5 +1,5 @@
 # Find a Recipe
-Jason Molisani's (jm979) project 1
+Jason Molisani's (jm979) CS 490 project 1
 
 ## How to get the code running on cloud 9
 <sup>Instructions borrowed and adapted from https://github.com/Sresht/lect6-heroku/blob/master/README</sup>  
@@ -18,7 +18,7 @@ Jason Molisani's (jm979) project 1
 9. Add your secret keys (from step 2) by making a new file called tweepy.env in the main folder of the repository and populating it as follows. **MAKE SURE THE FILE AND VARIABLES ARE NAMED THE EXACT SAME WAY AS DESCRIBED!!!**
    - TWITTER_API_KEY='insert_key_here'
    - TWITTER_API_SECRET_KEY='insert_secret_key_here'
-10. Run `python main.py`
+10. Run `python main.py` from the terminal or click the green run button at the top of the cloud 9 IDE
 10. Click the preview button at the top of the screen and select "Preview Running Application" from the drop down
 
 ## Technical Problems encountered
@@ -34,4 +34,10 @@ Jason Molisani's (jm979) project 1
 - Spoontacular not implemented
   - **Resolved** - Basic spoonacular functionality completed
 - CSS error, background and the default color of hyperlinks is exactly the same
-  - **Currently unresolved** - Finish one thing at a time. Just focus on spoonacular
+  - **Resolved** - Added a section to the css specifying the color of hyperlinks specifically, since it wasn't inheriting the color from main/body tags.
+- Need to adjust web page to include space for recipe prep time and ingredient list
+  - **Currently Unresolved** - Note, will probably change how variables get passed into flask to use a single dictionary of variable_name/value pairs
+- Need to pull the ingredient list from spoonacular results to have new values to pass into the spaces created in the updated webpage
+  - **Currently Unresolved** - Igredients are stored as a list of dictionaries (one per ingredient) in "extendedIngredients." Will probably want the value associated with "original" in each of these dictionaries
+- Need to deploy to Heroku
+  - **Currently Unresolved** - Will need to update README instructions too

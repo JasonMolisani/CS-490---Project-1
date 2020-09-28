@@ -1,6 +1,7 @@
 body {
     font-family: Helvetica;
     background-color: #8888FF;
+    color: #BBBB00;
 }
 
 h1 {
@@ -20,9 +21,8 @@ h1 {
     margin: auto;
     padding: 10px;
     width: 62%;
-    background-color: #0000EE;
+    background-color: #0000FF;
     border: 3px solid #996600;
-    color: #000000;
     font-size: 18pt;
     text-align: center;
     display: block;
@@ -47,4 +47,8 @@ img {
 
 p {
     margin: 0 0 0 0;
+}
+
+a {
+    color: #BBBB00;
 }
