@@ -91,7 +91,7 @@ def index():
         ingredient_list = ["2 Slices of Bread", "Peanut Butter", "Jelly (or Jam)"]
         prep_time = "1"
         tweet_content = "Hello world. There is nothing to be worried about. We mean you no harm :)"
-        tweet_sender = "AI"
+        tweet_sender = "AI (@CyberdynePR)"
         tweet_date = (datetime.now() + timedelta(days=1)).strftime("%m/%d/%Y, %H:%M:%S GMT")
     
     # Bundle the variables into a dictionary to pass info Flask
