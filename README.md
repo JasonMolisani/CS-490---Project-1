@@ -54,7 +54,7 @@
 
 ## Known Issues and Possible improvements
 - The search of tweets can sometimes return tweets that are not in english. This happens most often when the tweet tags another user and their username/handle contains part of the keyword.
-  - **Currently unresolved**
+  - **Resolved** - It is possible to apply a parameter to the Cursor to limit results by language (https://stackoverflow.com/questions/26890605/filter-twitter-feeds-only-by-language). This appears to have worked, but it is hard to extensively check when I have a limited number of spoonacular requests. The half-dozen loads I did after this were all in english.
 - The web page looks very ugly. The css file has been linked, but the file itself remains empty
   - **Resolved** - The app now has an accpetable appearance. It could certainly be improved by a more artistic person.
 - Spoontacular not implemented

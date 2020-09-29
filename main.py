@@ -70,7 +70,7 @@ def index():
         try:
             # Now that the spoonacular data was retrieved, get the twitter flask variables content
             max_tweets = 1
-            for relevant_tweet in Cursor(auth_api.search, q=keyword, count=1, tweet_mode="extended").items(max_tweets):
+            for relevant_tweet in Cursor(auth_api.search, q=keyword, count=1, tweet_mode="extended", lang="en").items(max_tweets):
                 try:
                     tweet_content = relevant_tweet.retweeted_status.full_text
                 except AttributeError:  # Not a Retweet
