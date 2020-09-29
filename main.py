@@ -59,24 +59,28 @@ def index():
     ingredient_list = ["2 Slices of Bread", "Peanut Butter", "Jelly (or Jam)"]
     prep_time = "1"
     
-    # # get a tweet relevant to the keyword and overwrite the default values of the flask variables
-    # max_tweets = 1
-    # for relevant_tweet in Cursor(auth_api.search, q=keyword, count=1).items(max_tweets):
-    #     try:
-    #         tweet_content = relevant_tweet.retweeted_status.full_text
-    #     except AttributeError:  # Not a Retweet
-    #         tweet_content = relevant_tweet.text
-    #     tweet_sender = relevant_tweet.user.name + " (@" + relevant_tweet.user.screen_name + ")"
-    #     tweet_date = relevant_tweet.created_at.strftime("%m/%d/%Y, %H:%M:%S %Z")
+    # get a tweet relevant to the keyword and overwrite the default values of the flask variables
+    max_tweets = 1
+    for relevant_tweet in Cursor(auth_api.search, q=keyword, count=1).items(max_tweets):
+        try:
+            tweet_content = relevant_tweet.retweeted_status.full_text
+        except AttributeError:  # Not a Retweet
+            tweet_content = relevant_tweet.text
+        tweet_sender = relevant_tweet.user.name + " (@" + relevant_tweet.user.screen_name + ")"
+        tweet_date = relevant_tweet.created_at.strftime("%m/%d/%Y, %H:%M:%S %Z")
     
-    # # get a corresponding recipe and image from Spoontacular and overwrite the default values of the flask variables
-    # sp_response = sp_api.search_recipes_complex(keyword, number=1)
-    # sp_response = sp_response.json()["results"][0]
-    # sp_data = sp_api.get_recipe_information(sp_response["id"])
-    # sp_data = sp_data.json()
-    # image_url = sp_data["image"]
-    # recipe_url = sp_data["sourceUrl"]
-    # name_recipe = sp_data["title"]
+    # get a corresponding recipe and image from Spoontacular and overwrite the default values of the flask variables
+    sp_response = sp_api.search_recipes_complex(keyword, number=1)
+    sp_response = sp_response.json()["results"][0]
+    sp_data = sp_api.get_recipe_information(sp_response["id"])
+    sp_data = sp_data.json()
+    image_url = sp_data["image"]
+    recipe_url = sp_data["sourceUrl"]
+    name_recipe = sp_data["title"]
+    prep_time = sp_data["readyInMinutes"]
+    ingredient_list = []
+    for ingrd in sp_data["extendedIngredients"]:
+        ingredient_list.append(ingrd["original"])
     
     # Bundle the variables into a dictionary to pass info Flask
     flask_vars = {

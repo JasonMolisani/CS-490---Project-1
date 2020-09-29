@@ -64,6 +64,8 @@ Jason Molisani's (jm979) CS 490 project 1
 - Need to adjust web page to include space for recipe prep time and ingredient list
   - **Resolved** - I changed how variables get passed into flask to use a single dictionary of variable_name/value pairs
 - Need to pull the ingredient list from spoonacular results to have new values to pass into the spaces created in the updated webpage
-  - **Currently Unresolved** - Igredients are stored as a list of dictionaries (one per ingredient) in "extendedIngredients." Will probably want the value associated with "original" in each of these dictionaries
+  - **Resolved** - This was rather painless after looking at some example responses (https://spoonacular.com/food-api/docs#Get-Recipe-Information). I chose to quote "original" for the list of ingredients since one of the examples tried to link a picture of cheddar cheese for the "grated cheese" ingredient.
 - Need to deploy to Heroku
   - **Resolved** - I should point out that the readme instructions don't cover the creation and uses for Procfile and requirements.txt since it assumes the user cloned this repository and therefore has those files already. Procfile exists to tell Heroku what to execute to start the app and requirements.txt tell Heroku what packages it will need to install in order to run the app.
+- Need to allow for display of default values if there is an error with the request
+  - **Currently Unresolved** - I'll probably use a try/except to do this. First, try to find an appropriate recipe. If that succeeds, look for an appropriate tweet. If spoonacular fails, use all default values. If just twitter fails, use the retrieved spoonacular and the twitter default.
