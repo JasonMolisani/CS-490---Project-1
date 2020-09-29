@@ -55,6 +55,8 @@ def index():
     image_url = "/static/origami_dragon.jpg"
     recipe_url = "https://www.google.com/"
     name_recipe = "Search Google for more " + keyword + " ideas"
+    ingredient_list = ["1 Apple", "2 Oranges", "3 Bananas"]
+    prep_time = "10"
     
     # get a tweet relevant to the keyword and overwrite the default values of the flask variables
     max_tweets = 1
@@ -75,14 +77,22 @@ def index():
     recipe_url = sp_data["sourceUrl"]
     name_recipe = sp_data["title"]
     
+    # Bundle the variables into a dictionary to pass info Flask
+    flask_vars = {
+        'recipe_seed': keyword,
+        'tweet': [tweet_content, tweet_sender, tweet_date],
+        'recipe_image': image_url,
+        'recipe_link': recipe_url,
+        'recipe_name': name_recipe,
+        'ingredients': ingredient_list,
+        'num_ingredients': len(ingredient_list),
+        'prep': prep_time
+    }
+    
     # Plug the flask variables into the render template and return the page
     return flask.render_template(
         "index.html",
-        recipe_seed = keyword,
-        tweet = [tweet_content, tweet_sender, tweet_date],
-        recipe_image = image_url,
-        recipe_link = recipe_url,
-        recipe_name = name_recipe
+        **flask_vars
         )
 
 #################################

@@ -6,12 +6,20 @@
         <h1>Recipe related to {{recipe_seed}}:</h1>
         <div id="main">
             <div id="text">
-                <p>{{tweet[0]}}</p>
-                <p style="text-align:right; font-size: 14pt">- {{tweet[1]}}, {{tweet[2]}}</p>
+                <h6>{{recipe_name}}</h6>
+                <p>Cooks in {{prep}} minutes</p>
+                <p>Ingredients: </p>
+                <ul>
+                    {%for i in range(0, num_ingredients)%}
+                        <li>{{ingredients[i]}}</li> 
+                    {%endfor%}
+                </ul>
+                <p>Click <a href={{recipe_link}}>HERE</a> for complete instructions</p>
             </div>
             <div id="image">
                 <img src={{recipe_image}} />
-                <p><a href={{recipe_link}}>{{recipe_name}}</a></p>
+                <p>{{tweet[0]}}</p>
+                <p style="text-align:right; font-size: 14pt">- {{tweet[1]}}, {{tweet[2]}}</p>
             </div>
         </div>
     </body>

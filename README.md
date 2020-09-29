@@ -56,13 +56,13 @@ Jason Molisani's (jm979) CS 490 project 1
 - The search of tweets can sometimes return tweets that are not in english. This happens most often when the tweet tags another user and their username/handle contains part of the keyword.
   - **Currently unresolved**
 - The web page looks very ugly. The css file has been linked, but the file itself remains empty
-  - **Partially resolved** - Some css has been entered, but there is still room for improvement
+  - **Partially resolved** - Some css has been entered, but there is still room for improvement, reworking the index.html to fit excess information has caused changes that need to be adapted for and beautified.
 - Spoontacular not implemented
   - **Resolved** - Basic spoonacular functionality completed
 - CSS error, background and the default color of hyperlinks is exactly the same
   - **Resolved** - Added a section to the css specifying the color of hyperlinks specifically, since it wasn't inheriting the color from main/body tags.
 - Need to adjust web page to include space for recipe prep time and ingredient list
-  - **Currently Unresolved** - Note, will probably change how variables get passed into flask to use a single dictionary of variable_name/value pairs
+  - **Resolved** - I changed how variables get passed into flask to use a single dictionary of variable_name/value pairs
 - Need to pull the ingredient list from spoonacular results to have new values to pass into the spaces created in the updated webpage
   - **Currently Unresolved** - Igredients are stored as a list of dictionaries (one per ingredient) in "extendedIngredients." Will probably want the value associated with "original" in each of these dictionaries
 - Need to deploy to Heroku
