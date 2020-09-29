@@ -15,6 +15,7 @@ h1 {
     background-color: #0000EE;
     display: block;
     text-align: center;
+    font-size: 28pt;
 }
 
 #main {
@@ -23,25 +24,60 @@ h1 {
     width: 62%;
     background-color: #0000FF;
     border: 3px solid #996600;
-    font-size: 18pt;
-    text-align: center;
+    text-align: left;
     display: block;
 }
 
 #text {
-    width: 33%;
+    width: 39%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#text p {
+    font-size: 16pt;
+}
+
+#text ul {
+    margin: 0px 0px 5px 0px;
+}
+
+#text li {
+    font-size: 14pt;
+    list-style: none;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+
+#text h6 {
+    font-size: 20pt;
+    text-align: center;
+    background-color: #2222BB;
+    border: 3px solid #996633;
+    margin: 0;
+}
+
+#image {
+    width: 60%;
     display: inline-block;
     vertical-align: middle;
 }
 
-#image {
-    width: 66%;
-    display: inline-block;
-    vertical-align: middle;
+#tweet {
+    background-color: #2222BB;
+    border: 3px solid #996633;
+    font-size: 18pt;
+    margin: 0
+}
+
+#tweeter {
+    font-size: 14pt;
+    text-align: right;
 }
 
 img {
     width: 100%;
+    margin: 0px 0px 10px 0px;
 }
 
 

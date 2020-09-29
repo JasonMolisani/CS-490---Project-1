@@ -56,7 +56,7 @@ Jason Molisani's (jm979) CS 490 project 1
 - The search of tweets can sometimes return tweets that are not in english. This happens most often when the tweet tags another user and their username/handle contains part of the keyword.
   - **Currently unresolved**
 - The web page looks very ugly. The css file has been linked, but the file itself remains empty
-  - **Partially resolved** - Some css has been entered, but there is still room for improvement, reworking the index.html to fit excess information has caused changes that need to be adapted for and beautified.
+  - **Resolved** - The app now has an accpetable appearance. It could certainly be improved by a more artistic person.
 - Spoontacular not implemented
   - **Resolved** - Basic spoonacular functionality completed
 - CSS error, background and the default color of hyperlinks is exactly the same
