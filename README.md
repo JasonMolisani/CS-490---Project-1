@@ -1,5 +1,5 @@
 # Find a Recipe
-Jason Molisani's (jm979) CS 490 project 1
+**Jason Molisani's (jm979) CS 490 project 1** - The idea of this project was to make and app that, on page load, will show a random recipe and a related tweet. The app is currently deployed with Heroku here: https://still-taiga-86561.herokuapp.com/
 
 ## How to get the code running on cloud 9
 <sup>(Instructions borrowed and adapted from https://github.com/Sresht/lect6-heroku/blob/master/README)</sup>
@@ -69,3 +69,7 @@ Jason Molisani's (jm979) CS 490 project 1
   - **Resolved** - I should point out that the readme instructions don't cover the creation and uses for Procfile and requirements.txt since it assumes the user cloned this repository and therefore has those files already. Procfile exists to tell Heroku what to execute to start the app and requirements.txt tell Heroku what packages it will need to install in order to run the app.
 - Need to allow for display of default values if there is an error with the request
   - **Currently Unresolved** - I'll probably use a try/except to do this. First, try to find an appropriate recipe. If that succeeds, look for an appropriate tweet. If spoonacular fails, use all default values. If just twitter fails, use the retrieved spoonacular and the twitter default.
+- Need to get full versions of the tweets
+  - **Currently Unresolved** - 
+- Add time zone to tweet time stamps or convert to local time
+  - **Currently Unresolved** - Most tweets appear to be stored in GMT by default, so the simple solution is just add " GMT" to the end of the string format
