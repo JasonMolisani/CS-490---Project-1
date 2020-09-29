@@ -70,6 +70,6 @@
 - Need to allow for display of default values if there is an error with the request
   - **Resolved** - (Done as planned) I'll probably use a try/except to do this. First, try to find an appropriate recipe. If that succeeds, look for an appropriate tweet. If spoonacular fails, use all default values. If just twitter fails, use the retrieved spoonacular and the twitter default.
 - Need to get full versions of the tweets
-  - **Currently Unresolved** - 
+  - **Resolved** - I needed to add a paramater to the Cursor that specified I wanted to use extended mode (http://docs.tweepy.org/en/latest/extended_tweets.html)
 - Add time zone to tweet time stamps or convert to local time
   - **Resolved** - Most tweets appear to be stored in GMT by default, so the simple solution is just add " GMT" to the end of the string format

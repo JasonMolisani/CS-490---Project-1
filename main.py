@@ -21,10 +21,10 @@ load_dotenv(dotenv_path)
 consumer_key = os.environ["TWITTER_API_KEY"]
 consumer_secret = os.environ["TWITTER_API_SECRET_KEY"]
 spoon_key = os.environ["SPOONACULAR_API_KEY"]
-#spoon_key = "bad_key"          #used for testing failure to get responses
-#consumer_secret = "bad_key"    #used for testing failure to get responses
-#access_token=""
-#access_token_secret=""
+#spoon_key = "bad_key"          # used for testing failure to get responses
+#consumer_secret = "bad_key"    # used for testing failure to get responses
+#access_token=""                # Would be using for twitter write permissions, but that is unneeded for this app
+#access_token_secret=""         # Would be using for twitter write permissions, but that is unneeded for this app
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 #auth.set_access_token(access_token, access_token_secret)
@@ -70,11 +70,11 @@ def index():
         try:
             # Now that the spoonacular data was retrieved, get the twitter flask variables content
             max_tweets = 1
-            for relevant_tweet in Cursor(auth_api.search, q=keyword, count=1).items(max_tweets):
+            for relevant_tweet in Cursor(auth_api.search, q=keyword, count=1, tweet_mode="extended").items(max_tweets):
                 try:
                     tweet_content = relevant_tweet.retweeted_status.full_text
                 except AttributeError:  # Not a Retweet
-                    tweet_content = relevant_tweet.text
+                    tweet_content = relevant_tweet.full_text
                 tweet_sender = relevant_tweet.user.name + " (@" + relevant_tweet.user.screen_name + ")"
                 tweet_date = relevant_tweet.created_at.strftime("%m/%d/%Y, %H:%M:%S %Z GMT")
             # print("Requests successful. Using dynamically retrieved spoonacular and twitter responses.")
