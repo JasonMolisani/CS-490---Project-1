@@ -68,8 +68,8 @@
 - Need to deploy to Heroku
   - **Resolved** - I should point out that the readme instructions don't cover the creation and uses for Procfile and requirements.txt since it assumes the user cloned this repository and therefore has those files already. Procfile exists to tell Heroku what to execute to start the app and requirements.txt tell Heroku what packages it will need to install in order to run the app.
 - Need to allow for display of default values if there is an error with the request
-  - **Currently Unresolved** - I'll probably use a try/except to do this. First, try to find an appropriate recipe. If that succeeds, look for an appropriate tweet. If spoonacular fails, use all default values. If just twitter fails, use the retrieved spoonacular and the twitter default.
+  - **Resolved** - (Done as planned) I'll probably use a try/except to do this. First, try to find an appropriate recipe. If that succeeds, look for an appropriate tweet. If spoonacular fails, use all default values. If just twitter fails, use the retrieved spoonacular and the twitter default.
 - Need to get full versions of the tweets
   - **Currently Unresolved** - 
 - Add time zone to tweet time stamps or convert to local time
-  - **Currently Unresolved** - Most tweets appear to be stored in GMT by default, so the simple solution is just add " GMT" to the end of the string format
+  - **Resolved** - Most tweets appear to be stored in GMT by default, so the simple solution is just add " GMT" to the end of the string format
