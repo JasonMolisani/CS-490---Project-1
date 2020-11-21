@@ -34,7 +34,7 @@ def index():
 
     # Get values for the flask variables
     spoon_handler = SpoonHandeler()
-    recipe = spoon_handler.get_recipe_about(keyword, fake_error=True)
+    recipe = spoon_handler.get_recipe_about(keyword, fake_error=False)
     tweepy_handler = TweepyHandler()
     tweet = tweepy_handler.get_tweet_about(keyword, fake_error=recipe["error"])
 
