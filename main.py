@@ -34,7 +34,7 @@ def index():
     keyword = recipes[random.randint(0, len(recipes) - 1)]
 
     # Get values for the flask variables
-    spoon_handler = SpoonHandeler()
+    spoon_handler = SpoonHandler()
     recipe = spoon_handler.get_recipe_about(keyword, fake_error=BYPASS_API_CALLS)
     tweepy_handler = TweepyHandler()
     tweet = tweepy_handler.get_tweet_about(keyword, fake_error=recipe["error"])
