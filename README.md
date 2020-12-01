@@ -1,5 +1,5 @@
 # Find a Recipe
-**Jason Molisani's (jm979) CS 490 project 1** - The idea of this project was to make and app that, on page load, will show a random recipe and a related tweet. The app is currently deployed with Heroku here: https://still-taiga-86561.herokuapp.com/
+**Jason Molisani's (jm979) CS 490 project 1** - The idea of this project was to make and app that, on page load, will show a random recipe and a related tweet. The app is currently deployed with Heroku here: https://still-taiga-86561.herokuapp.com/ The project specifications I was given can be found in `Project_1_Specifications.pdf`
 
 ## How to get the code running on cloud 9
 <sup>(Instructions borrowed and adapted from https://github.com/Sresht/lect6-heroku/blob/master/README)</sup>
