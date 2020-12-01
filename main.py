@@ -7,7 +7,7 @@ import os
 import random
 import flask
 from tweepy_handler import TweepyHandler
-from spoon_handler import SpoonHandeler
+from spoon_handler import SpoonHandler
 
 APP = flask.Flask(__name__)
 BYPASS_API_CALLS = False

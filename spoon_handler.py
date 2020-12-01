@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 import spoonacular as sp
 
 
-class SpoonHandeler:
+class SpoonHandler:
     '''
     custom wrapper for spoonacular API
     '''
